@@ -1,0 +1,17 @@
+<div class="container turquoise-breaker" style="background-image: url('{{ include.service.image | relative_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    
+    <div class="container six-hundred-centered-cont productText productTextOverlay">
+        <h2 class="centered">
+            <font color="#e2a884" class="productText">{{ include.service.title }}</font>
+        </h2>
+        <p class="paragraph centered bold-white-text">
+            {{ include.service.subtitle }}<br><br>
+            {{ include.service.description }}<br><br>
+            
+            {% for feature in include.service.features %}
+            ✔ {{ feature }}<br>
+            {% endfor %}
+        </p>
+    </div>
+
+</div>

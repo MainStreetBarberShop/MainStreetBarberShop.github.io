@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="row">
+    <div class="large-9 columns" role="content">
+        {{ content }}
+    </div>
+
+    <aside class="large-3 columns">
+        <h4>Library Nodes</h4>
+        <ul id="posts" class="side-nav">
+            {% for post in site.posts limit: 10 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <div class="panel shadow-box">
+            <h5>Technical Note</h5>
+            <p>All documentation rendered via StarsEnd Node-01 using AsciiDoc engineering standards.</p>
+        </div>
+    </aside>
+</div>

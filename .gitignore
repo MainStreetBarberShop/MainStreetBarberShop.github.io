@@ -1,0 +1,12 @@
+# Windows System Files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Jekyll / Site Build Files
+_site/
+.jekyll-cache/
+.sass-cache/
+.DS_Store
+assets/images/Gemini_Generated_Image_hu1e31hu1e31hu1e.png.~tmp

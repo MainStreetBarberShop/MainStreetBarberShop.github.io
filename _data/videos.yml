@@ -1,0 +1,8 @@
+- title: "Video #01"
+  source: "/assets/videos/Athlete01.mp4"
+  poster: "/images/poster-athlete01.jpg"
+  description: "Take ONE"
+- title: "Video #02"
+  source: "/assets/videos/Athlete02.mp4"
+  poster: "/images/poster-demo02.jpg"
+  description: "Take TWO"

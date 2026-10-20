@@ -1,0 +1,163 @@
+#  * Asset Fingerprinting Module
+#  * Logic: Implements pHash (Perceptual Hash) for visual similarity detection.
+
+
+import os
+import json
+import imagehash
+from PIL import Image
+
+# Directories to catalog
+target_galleries = ['images/artgallery/gallery01', 'images/artgallery/gallery02']
+data_dir = '_data'
+
+print("--- [STARFIRE DISTRIBUTED AUDIT STARTING] ---")
+
+for gallery_dir in target_galleries:
+    # Use the directory name as the filename (e.g., gallery01.json)
+    gallery_name = os.path.basename(gallery_dir)
+    registry = {}
+    
+    if not os.path.exists(gallery_dir):
+        print(f"Warning: {gallery_dir} not found. Skipping.")
+        continue
+        
+    for filename in os.listdir(gallery_dir):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            path = os.path.join(gallery_dir, filename)
+            try:
+                img = Image.open(path)
+                h = str(imagehash.phash(img))
+                registry[filename] = h # Key by filename for easier JS lookup
+            except Exception as e:
+                print(f"Error auditing {filename}: {e}")
+
+    # Write per-gallery JSON file in _data
+    output_path = os.path.join(data_dir, f"{gallery_name}.json")
+    with open(output_path, 'w') as f:
+        json.dump(registry, f, indent=4)
+    print(f"Verified: {gallery_name} | Registry saved to {output_path}")
+
+print("--- [AUDIT COMPLETE] ---")
+
+
+
+
+
+
+# import os
+# import json
+# import imagehash
+# from PIL import Image
+
+# # Directories to catalog
+# target_galleries = ['images/artgallery/gallery01', 'images/artgallery/gallery02']
+# registry = {}
+
+# print("--- [STARFIRE PYTHON AUDIT STARTING] ---")
+
+# for gallery_dir in target_galleries:
+#     if not os.path.exists(gallery_dir):
+#         continue
+        
+#     for filename in os.listdir(gallery_dir):
+#         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+#             path = os.path.join(gallery_dir, filename)
+#             try:
+#                 img = Image.open(path)
+#                 # Compute hash
+#                 h = str(imagehash.phash(img))
+#                 registry[path] = h
+#                 print(f"Verified: {filename} | Hash: {h}")
+#             except Exception as e:
+#                 print(f"Error auditing {filename}: {e}")
+
+# # Write to _data so Jekyll can use it
+# os.makedirs('_data', exist_ok=True)
+# with open('_data/hashes.json', 'w') as f:
+#     json.dump(registry, f, indent=4)
+
+# print("--- [AUDIT COMPLETE: Registry saved to _data/hashes.json] ---")
+
+
+# import os
+# import json
+# import imagehash
+# from PIL import Image
+
+# # Directories to catalog
+# target_galleries = ['images/artgallery/gallery01', 'images/artgallery/gallery02']
+# registry = {}
+
+# print("--- [STARFIRE PYTHON AUDIT: TARGETED MODE] ---")
+
+# for gallery_dir in target_galleries:
+#     if not os.path.exists(gallery_dir):
+#         continue
+        
+#     for filename in os.listdir(gallery_dir):
+#         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+#             path = os.path.join(gallery_dir, filename)
+#             try:
+#                 img = Image.open(path)
+#                 # Compute hash
+#                 h = str(imagehash.phash(img))
+#                 registry[path] = h
+#                 print(f"Verified: {filename} | Hash: {h}")
+#             except Exception as e:
+#                 print(f"Error auditing {filename}: {e}")
+
+# # Directly write to _data/hashes.json without creating directory
+# output_path = os.path.join('_data', 'hashes.json')
+# with open(output_path, 'w') as f:
+#     json.dump(registry, f, indent=4)
+
+# print(f"--- [AUDIT COMPLETE: Registry saved to {output_path}] ---")
+
+# * Asset Fingerprinting Module
+#  * Logic: Implements pHash (Perceptual Hash) for visual similarity detection.
+#  * Strategy: Used to identify duplicate or near-duplicate assets within 
+#  * the Starfire repository, enabling automated cleanup and storage optimization.
+
+
+
+# import os
+# import json
+# import imagehash
+# from PIL import Image
+
+# # Directories to catalog
+# target_galleries = ['images/artgallery/gallery01', 'images/artgallery/gallery02']
+# registry = {}
+# data_dir = '_data'
+# output_file = 'hashes.json'
+
+# print("--- [STARFIRE DEFENSIVE AUDIT STARTING] ---")
+
+# # 1. Safety Check: Verify the target directory exists
+# if not os.path.exists(data_dir):
+#     print(f"CRITICAL: {data_dir} directory not found. Aborting to prevent data loss.")
+#     exit(1)
+
+# for gallery_dir in target_galleries:
+#     if not os.path.exists(gallery_dir):
+#         print(f"Warning: {gallery_dir} not found. Skipping.")
+#         continue
+        
+#     for filename in os.listdir(gallery_dir):
+#         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+#             path = os.path.join(gallery_dir, filename)
+#             try:
+#                 img = Image.open(path)
+#                 h = str(imagehash.phash(img))
+#                 registry[path] = h
+#                 print(f"Verified: {filename}")
+#             except Exception as e:
+#                 print(f"Error auditing {filename}: {e}")
+
+# # 2. Write safely
+# output_path = os.path.join(data_dir, output_file)
+# with open(output_path, 'w') as f:
+#     json.dump(registry, f, indent=4)
+
+# print(f"--- [AUDIT COMPLETE: Registry saved to {output_path}] ---")

@@ -1,0 +1,37 @@
+# _data/services.yml (UPDATED WITH IMAGE DATA)
+- title: "Systems Administration & InterNet Security"
+  # You already have this image, update filename to match.
+  image: "/images/starsend_terminal.png"
+  subtitle: "Enterprise-grade reliability, automation, and full-stack engineering support."
+  description: "The ultimate backbone for your digital and physical operations. Whether you need 24/7 technical support, professional drone cinematography for your next event, or expert consulting on your studio's audio setup, we handle the technology so you can focus on the work."
+  features:
+    - "Core Management: Windows/LINUX Server administration, Active Directory, and domain management."
+    - "Infrastructure: Virtualization (Hyper-V/VMware), network security (TCP/IP, Firewall), and cloud integration."
+    - "Remote Tech Support: 24/7 global troubleshooting, hardware optimization, and security analysis."
+
+- title: "Aerial Infrastructure & Media"
+  # REFERENCE FOR THE NEW DRONE VISUAL ASSET
+  image: "/images/aerial_infrastructure.png"
+  subtitle: "Professional-grade aerial survey and real-time imaging."
+  description: "Capture the dynamic perspective of your next stage show or industrial site. We bridge the gap between automated flight hardware and creative media production."
+  features:
+    - "Tactical Capture: High-angle tactical footage, dynamic highlight reels, and event coverage."
+    - "Precision Flight: Use of optical flow positioning and altitude hold for consistent, high-fidelity capture."
+
+- title: "Music Engineering & Harmonic Consulting"
+  # REFERENCE FOR THE NEW AUDIO VISUAL ASSET
+  image: "/images/music_engineering.png"
+  subtitle: "Bridging the gap between raw musical theory and modern digital production."
+  description: "Music production is as much about data flow and signal integrity as it is about creativity. We provide the technical backbone to ensure your compositions are theoretically sound and your production environment is engineered for zero-latency performance."
+  features:
+    - "Theory Consulting: Harmonic structure, composition analysis, and arrangement for complex projects."
+    - "Digital Production: Technical workflow integration, DAW optimization, and MIDI signal path design."
+
+- title: "24/7 Field & Tactical Support"
+  image: "/images/Support02.jpg"
+  subtitle: "Operational continuity, whether you're in the studio or broken down in the middle of nowhere."
+  description: "Tech issues and mechanical failures don't keep business hours. We provide 24/7 technical and tactical support for creators. From remote software troubleshooting and secure server management to real-world assistance when your gear—or your tour van—stops cooperating in the middle of BFE, we have your back."
+  features:
+    - "Remote Ops: 24/7 troubleshooting for server, network, and audio production workflows."
+    - "Field Continuity: Tactical advice for remote hardware recovery and site repairs."
+    - "Logistical Reliability: Your emergency contact for technical and logistical project survival."

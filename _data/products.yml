@@ -1,0 +1,39 @@
+# _data/products.yml (Four-Vector Creator Layout)
+
+- title: "Website Design & Hosting Services"
+  image: "/images/Jekyll.png"
+  subtitle: "Give your art the professional online presence it deserves."
+  description: "Your art deserves a home, not just a social media feed. We build lightning-fast, custom websites tailored specifically for creators, bands, and artists. Own your platform, connect directly with your fans, and stop fighting the algorithm."
+  features:
+    - "Custom layouts built for musicians and content creators."
+    - "Patreon-friendly designs that enhance fan engagement."
+    - "Hosting: Optimized for Free GitHub Pages & Netlify deployment."
+    - "Scalability: Tiered upgrades available for Advanced Azure Hosting and custom databases."
+
+- title: "Professional AI-Generated Artwork"
+  image: "/images/AIArtwork.png"
+  subtitle: "Step into the future of creativity with precision visual synthesis."
+  description: "Bring your vision to life. From striking digital visuals and poster art to custom branding materials. Our advanced design studio blends expert craftsmanship and strategic AI synthesis to create high-quality assets that truly stand out."
+  features:
+    - "Visual Synthesis: Professional AI-generated artwork tailored to your aesthetic."
+    - "Custom Training: Model fine-tuning based on your proprietary photography."
+    - "Versatile Options: Perfect for album covers, digital galleries, and branding."
+
+- title: "Promotional Merchandise Design"
+  image: "/images/Cheerleader02.png"
+  subtitle: "Transform your brand into eye-catching, custom-designed merchandise."
+  description: "Leave a lasting impression. Whether you are looking for custom shirts, hats, stickers, or exclusive 3D-printed collectibles, our pipeline ensures a professional, high-fidelity finish."
+  features:
+    - "Custom Merchandise: High-quality production files for apparel and digital prints."
+    - "3D Engineering: Converting photography into physical, collector-grade figures."
+    - "Manufacturing: Model optimization and slicing for physical production."
+    - "Curated lists of affordable, reliable 3D printers (e.g., Creality Ender 3, Anycubic Kobra Go)"
+
+- title: "Album Design & Production"
+  image: "/images/BadGirl02.jpg"
+  subtitle: "Striking visuals and precision production for your physical media."
+  description: "Create high-quality, professional CD and DVD designs that showcase your music. Whether it's a new album release, a limited-edition collector's item, or promotional materials, our manufacturing pipeline ensures a polished, custom finish."
+  features:
+    - "Expert cover art and packaging design tailored to your specific vision."
+    - "Durable, high-quality disc printing and physical replication."
+    - "Perfect for independent artists, bands, and local businesses."
