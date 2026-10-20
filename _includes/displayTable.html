@@ -1,0 +1,24 @@
+{% assign filtered_data = include.data | where: "category", include.type %}
+{% assign column_array = include.columns | split: "," %}
+
+<table class="pricingTable">
+    <thead>
+        <tr>
+            {% for col in column_array %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in filtered_data %}
+        <tr>
+            {% for col in column_array %}
+                <td>{{ item[col] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+

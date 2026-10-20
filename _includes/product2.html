@@ -1,0 +1,48 @@
+<div class="container turquoise-breaker productSectionWrapper">
+    <div class="container six-hundred-centered-cont productText productTextOverlay">
+        <h2 class="centered">
+            <font color="#e2a884" class="productText">{{ include.product.title }}</font>
+        </h2>
+        <p class="paragraph centered bold-white-text">
+            {{ include.product.subtitle }}<br><br>
+            {{ include.product.description }}<br><br>
+            
+            {% for feature in include.product.features %}
+            ✔ {{ feature }}<br>
+            {% endfor %}
+        </p>
+    </div>
+
+    <!-- {% if include.product.videoSource %}
+    <div class="videoHighlightWrapper">
+        <video width="100%" controls poster="{{ include.product.posterImage }}">
+            <source src="{{ include.product.videoSource }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    {% endif %} -->
+<!-- 
+    <div class="carousel">
+    {% for video in site.data.videos %}
+        <div class="carousel-slide">
+        <h3>{{ video.title }}</h3>
+        <video width="100%" controls>
+            <source src="{{ video.source }}" type="video/mp4">
+        </video>
+        </div>
+    {% endfor %}
+    </div> -->
+</div>
+
+<div class="container mediaCarouselSection">
+    <h2>Media Library</h2>
+    {% include carousel.html items=site.data.videos start=0 end=3 %}
+</div>
+
+
+
+<div class="test">
+    {% for video in site.data.videos %}
+        <p>Found: {{ video.title }}</p>
+    {% endfor %}
+</div>
