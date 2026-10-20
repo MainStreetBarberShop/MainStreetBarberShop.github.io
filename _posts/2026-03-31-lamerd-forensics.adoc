@@ -1,0 +1,19 @@
+= Forensic Analysis: The Lamerd Strike vs. Simulation Logic
+Donald Scott Gould <dsg@starfireindustries.ai>
+:layout: post
+:categories: forensics
+:tags: [iran, military-analysis, simulations]
+
+== The Simulation Guardrail
+In the "Standard Model" of modern combat simulations, such as *Nuclear Option*, targeting is restricted to strategic assets. This engineering choice reflects a "Clean War" philosophy where civilian infrastructure is off-limits. Finding these guardrails reveals the developer's intent to avoid "Atrocity Sims."
+
+== The Ground Reality: Lamerd (Feb 28, 2026)
+Real-world forensics tell a different story. Analysis of the Lamerd strike shows a Precision Strike Missile (PrSM) impact on a community hub and school.
+
+* **Strategic Proximity:** The impact point was 900 feet from a hardened IRGC compound.
+* **Target Choice:** The "Soft Target" (community heart) was destroyed while the "Hard Target" (military brain) remained functional.
+
+== Conclusion
+In infrastructure-poor regions, "Human Shielding" is often a misnomer for **Infrastructure Centralization**. Power and water follow the military. Attacking the social hub instead of the bunker isn't an error—it's a choice to dismantle the community's future. 
+
+"Real-world 'Nuclear Options' have no reset button."

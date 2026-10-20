@@ -1,0 +1,41 @@
+{% comment %}
+    Carousel Component - Data-Aware
+    - include.items: Pass site.data.videos or any sub-array
+    - include.wrap: true/false
+{% endcomment %}
+
+<script>
+    const carouselVideos = {{ include.items | jsonify }};
+</script>
+
+
+
+<div id="carouselContainer" class="carouselContainer" data-wrap="{{ include.wrap | default: 'false' }}">
+
+    <div class="sfVideoInfo">
+        <h3 id="sfVideoTitle">Loading...</h3>
+        <p id="sfVideoDesc"></p>
+    </div>
+
+    <video id="sfVideoPlayer" controls preload="metadata">
+        {% if include.items[0].poster %} poster="{{ include.items[0].poster | relative_url }}" {% endif %}>
+        
+        <source id="sfVideoSource" src="{{ include.items[0].source | relative_url }}#t=0.1" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="carouselNav">
+        <button class="sfButtonBack">
+            {{ include.backIcon | default: 'Back' }}
+        </button>
+        <button class="sfButtonNext">
+            {{ include.nextIcon | default: 'Next' }}
+        </button>
+    </div>
+</div>
+
+
+
+
+
+
