@@ -1,0 +1,16 @@
+<div class="container turquoise-breaker productSectionWrapper" style="background-image: url('{{ include.product.image | relative_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    
+    <div class="container six-hundred-centered-cont productText productTextOverlay">
+        <h2 class="centered">
+            <font color="#e2a884" class="productText">{{ include.product.title }}</font>
+        </h2>
+        <p class="paragraph centered bold-white-text">
+            {{ include.product.subtitle }}<br><br>
+            {{ include.product.description }}<br><br>
+            
+            {% for feature in include.product.features %}
+            ✔ {{ feature }}<br>
+            {% endfor %}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>{{page.title}}</title>
+			<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+			<meta name="author" content="Your name goes here">
+			<meta name="copyright" content="Maybe consider a Creative Commons license">
+			
+			<link rel="stylesheet" href="{{page.root}}/css/foundation.css">
+
+			<link rel="stylesheet" href="{{page.root}}/css/fontawesome.css">
+			<link rel="stylesheet" href="{{page.root}}/css/all.css" rel="stylesheet">
+			<!-- <link rel="stylesheet" href="{{page.root}}/css/regular.css" rel="stylesheet"> -->
+			<!-- <link rel="stylesheet" href="{{page.root}}/css/solid.css" rel="stylesheet"> -->
+
+			<link rel="stylesheet" href="{{page.root}}/css/coderay-asciidoctorweb.css">
+			<link rel="stylesheet" href="{{page.root}}/css/asciidoctor.css">
+			<!-- <link rel="stylesheet" href="{{page.root}}/css/working-css.css"> -->
+			<!-- <script src="{{page.root}}/js/toc.js"></script> -->
+
+			<!-- link to main stylesheet -->
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
+			<link rel="stylesheet" href="/css/lightbox.css" />
+			<!-- <link type="text/css" rel="stylesheet" href="/css/lightgallery-bundle.css" /> -->
+			<!-- <link rel="stylesheet" href="/css/justifiedGallery.min.css" /> -->
+		</head>
+		<body>
+			
+			{% include navigation.html %}
+
+			
+			{{ content }}
+			
+
+			{% include footer.html %}
+
+
+			<script src="/js/vendor/jquery.min.js"></script>
+			<script src="/js/vendor/outofview.js"></script>
+			<script src="/js/vendor/what-input.min.js"></script>
+			<script src="/js/vendor/foundation.min.js"></script>
+			<script src="/js/vendor/modernizr.js"></script>
+			<script src="/js/vendor/lightbox.js"></script>
+			<!-- <script src="/js/vendor/lightgallery.min.js"></script>
+			<script src="/js/vendor/lg-thumbnail.min.js"></script>
+			<script src="/js/vendor/lg-zoom.min.js"></script> -->
+
+			<!-- <script src="/js/vendor/jquery.justifiedGallery.min.js"></script> -->
+
+			<script src="/js/app2.js" defer></script>
+
+			<!-- <script>$(document).foundation();</script> -->
+
+			
+			<!-- SMOOTH SCROLL -->
+			<script>
+				$(function () {
+					$('a.smooth-scroll[href*="#"]:not([href="#"])').click(function () {
+						if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+							var target = $(this.hash);
+							target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+							if (target.length) {
+								$('html,body').animate({
+									scrollTop: target.offset().top
+								}, 1000);
+								return false;
+							}
+						}
+					});
+				});
+
+				// lightGallery(document.getElementById('artGalleryBody'), {
+        		// 	plugins: [lgZoom, lgThumbnail],
+        		// 	licenseKey: 'your_license_key',
+        		// 	speed: 500,
+        		// 	thumbnail: true,
+				// 	zoom: true,
+    			// });
+
+				// $("#artGalleryBody").justifiedGallery();
+			</script>
+			<!-- End of SMOOTH SCROLL -->
+		</body>
+	</html>

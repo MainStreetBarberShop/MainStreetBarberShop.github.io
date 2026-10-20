@@ -1,0 +1,196 @@
+
+
+
+#  * Asset Fingerprinting Module
+#  * Logic: Implements pHash (Perceptual Hash) for visual similarity detection.
+#  * Strategy: Used to identify duplicate or near-duplicate assets within 
+#  * the Starfire repository, enabling automated cleanup and storage optimization.
+
+
+
+
+
+
+
+
+
+# require 'image_hash'
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   # 1. Define the gallery directories you want to audit
+#   gallery_dirs = ['images/artgallery/gallery01', 'images/artgallery/gallery02'] 
+#   hash_registry = {}
+
+#   gallery_dirs.each do |dir|
+#     path = File.join(site.source, dir)
+#     Dir.glob(File.join(path, "*.{jpg,png}")).each do |img_path|
+#       # 2. Compute pHash
+#       hash = ImageHash.phash(img_path)
+#       # 3. Store relative path and hash
+#       relative_path = img_path.sub(site.source, '')
+#       hash_registry[relative_path] = hash.to_s
+#     end
+#   end
+
+#   # 4. Write to _data so Jekyll can use it in templates
+#   File.write(File.join(site.source, '_data/hashes.json'), hash_registry.to_json)
+# end
+
+
+# require 'image_hash'
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   # This points to your images folder, which exists in your build
+#   gallery_dir = File.join(site.source, 'images/artgallery')
+  
+#   puts "\n--- [STARFIRE INTEGRITY AUDIT] ---"
+  
+#   # Replace your current loop content with this:
+#   Dir.glob(File.join(gallery_dir, "**", "*.{jpg,png}")).each do |img_path|
+#     begin
+#       # The gem requires opening the image file object first
+#       img = ImageHash.read(img_path) 
+#       hash = img.phash
+#       puts "Verified: #{File.basename(img_path)} | Hash: #{hash}"
+#     rescue => e
+#       puts "Error auditing #{File.basename(img_path)}: #{e.message}"
+#     end
+#   end
+  
+#   puts "--- [AUDIT COMPLETE] ---\n"
+# end
+
+
+
+# require 'image_hash'
+# require 'chunky_png' # Make sure this is in your Gemfile if it's not already
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   # Explicitly target only the galleries you want
+#   target_galleries = ['images/artgallery/gallery01', 'images/artgallery/gallery02']
+  
+#   puts "\n--- [STARFIRE INTEGRITY AUDIT: TARGETED MODE] ---"
+  
+#   target_galleries.each do |rel_dir|
+#     path = File.join(site.source, rel_dir)
+#     next unless Dir.exist?(path)
+    
+#     Dir.glob(File.join(path, "*.{jpg,png}")).each do |img_path|
+#       begin
+#         # Use a more robust way to compute the hash
+#         # Many versions of the gem prefer the 'phash' module directly
+#         hash = ImageHash.phash(img_path) 
+#         puts "Verified: #{File.basename(img_path)} | Hash: #{hash}"
+#       rescue => e
+#         puts "Error auditing #{File.basename(img_path)}: #{e.class} - #{e.message}"
+#       end
+#     end
+#   end
+#   puts "--- [AUDIT COMPLETE] ---\n"
+# end
+
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   puts "\n[Jekyll] Integrity bridge: Triggering Python Audit..."
+  
+#   # Call the audit script
+#   script_path = File.join(site.source, '_scripts', 'audit.py')
+  
+#   if success
+#     puts "[Jekyll] Integrity bridge: Python audit successful."
+#   else
+#     puts "[Jekyll] Integrity bridge: FAILED to run Python script."
+#   end
+# end
+
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   script_path = File.expand_path("_scripts/audit.py", site.source)
+  
+#   puts "\n[Jekyll] Integrity bridge: Triggering Audit at: #{script_path}"
+  
+#   # Execute and capture the result in a local variable scoped to this block
+#   begin
+#     # Use the backtick method or system. Here, system returns true/false.
+#     result = system("python \"#{script_path}\"")
+    
+#     if result
+#       puts "[Jekyll] Integrity bridge: Python audit successful."
+#     else
+#       puts "[Jekyll] Integrity bridge: Python audit FAILED."
+#     end
+#   rescue => e
+#     puts "[Jekyll] Integrity bridge: CRITICAL ERROR: #{e.message}"
+#   end
+# end
+
+
+# require 'rbconfig'
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   # Determine if we are on Windows or Linux
+#   is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+  
+#   # Set the command: Use 'python3' for Linux/Cloud, 'python' for Windows
+#   python_cmd = is_windows ? "python" : "python3"
+  
+#   script_path = File.expand_path("_scripts/audit.py", site.source)
+  
+#   puts "\n[Jekyll] Integrity bridge: Triggering Audit on #{RbConfig::CONFIG['host_os']}"
+  
+#   # Execute
+#   result = system("#{python_cmd} \"#{script_path}\"")
+  
+#   unless result
+#     puts "[Jekyll] Integrity bridge: FAILED to run Python script using '#{python_cmd}'."
+#   end
+# end
+
+
+
+# require 'rbconfig'
+
+# Jekyll::Hooks.register :site, :post_write do |site|
+#   # Determine if we are on Windows or Linux to pick the correct binary
+#   is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+#   python_cmd = is_windows ? "python" : "python3"
+  
+#   # Absolute pathing that works anywhere
+#   script_path = File.expand_path("_scripts/audit.py", site.source)
+  
+#   puts "\n[Jekyll] Integrity bridge: Triggering Audit with '#{python_cmd}'"
+  
+#   # Run the script and capture the result
+#   # The explicit quotes are vital for paths with spaces
+#   result = system("#{python_cmd} \"#{script_path}\"")
+  
+#   unless result
+#     puts "[Jekyll] Integrity bridge: Python audit FAILED. Ensure dependencies are installed."
+#   end
+# end
+
+
+require 'rbconfig'
+
+Jekyll::Hooks.register :site, :post_write do |site|
+  # Prevent the hook from running if we are in watch mode or if the file was just written
+  # By checking the destination, we ensure we only act once the site is already built
+  
+  is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+  python_cmd = is_windows ? "python" : "python3"
+  script_path = File.expand_path("_scripts/audit.py", site.source)
+  
+  puts "\n[Jekyll] Integrity bridge: Triggering Audit..."
+  
+  # Execute the script
+  success = system("#{python_cmd} \"#{script_path}\"")
+  
+  if success
+    puts "[Jekyll] Integrity bridge: Audit complete."
+  else
+    puts "[Jekyll] Integrity bridge: FAILED."
+  end
+  
+  # IMPORTANT: We exit the hook here, but Jekyll might still detect 
+  # the change to _data/hashes.json. 
+end
