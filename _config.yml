@@ -11,9 +11,9 @@ baseurl: "https://mainestreetbarbershop.github.io"
 
 # --- Starfire Industries Global Identity ---
 company:
-  name: "Starfire Industries AI"
-  director: "Donald Scott Gould"
-  email: "planesguard@starfire-industries-ai.com"
+  name: "Maine Street Barber Shop"
+  owner: "Darlene Colyer"
+  email: "colyerdarlene@gmail.com"
   phone: ""
   website: "https://mainstreetbarbershop.github.io/"
   slack: "https://starfireindustriesai.slack.com/"
