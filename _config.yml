@@ -7,7 +7,7 @@ plugins:
 #baseurl: /blog
 
 url: "https://mainestreetbarbershop.github.io"
-baseurl: "https://mainestreetbarbershop.github.io"
+# baseurl: "https://mainestreetbarbershop.github.io"
 
 # --- Starfire Industries Global Identity ---
 company:
@@ -20,7 +20,7 @@ company:
   bluesky: "https://starfireindustries.bsky.social"
   youtube: "https://www.youtube.com/@GermanFAT8TrackRecords69"
   coffee: "https://buymeacoffee.com/starfirezac"
-  
+
 exclude:
   - LICENSE
   - README.adoc
