@@ -7,6 +7,4 @@ gem 'rake-jekyll', '~> 1.1.0'
 group :jekyll_plugins do
   gem 'jekyll-asciidoc', '~> 3.0.0'
   gem 'jekyll-paginate', '~> 1.1.0'
-  gem 'image_hash'
-  gem 'chunky_png'
 end
