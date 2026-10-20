@@ -14,14 +14,13 @@ company:
   name: "Maine Street Barber Shop"
   owner: "Darlene Colyer"
   email: "colyerdarlene@gmail.com"
-  phone: ""
+  phone: "719-285-3724"
   website: "https://mainstreetbarbershop.github.io/"
   slack: "https://starfireindustriesai.slack.com/"
   bluesky: "https://starfireindustries.bsky.social"
   youtube: "https://www.youtube.com/@GermanFAT8TrackRecords69"
   coffee: "https://buymeacoffee.com/starfirezac"
-  phone: "719-285-3724"
-
+  
 exclude:
   - LICENSE
   - README.adoc
