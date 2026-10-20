@@ -6,8 +6,8 @@ plugins:
 # uncomment baseurl if you want to publish the site to a subfolder
 #baseurl: /blog
 
-url: "https://mainestreetbarbershop.github.io"
-baseurl: "https://mainestreetbarbershop.github.io"
+url: "https://planesguard.starfire-industries-ai.com"
+baseurl: ""
 
 # --- Starfire Industries Global Identity ---
 company:
