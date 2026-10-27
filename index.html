@@ -1,70 +1,248 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Maine Street Barber Shop</title>
-  <style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/darlene.css">
+
+  <!-- Leaflet Cartography -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- <style>
     :root {
       --bg: #121212;
       --card: #1e1e1e;
       --text: #f0f0f0;
+      --muted: #aaaaaa;
       --accent: #c49a45;
+      --border: #333333;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 1.5rem;
+      padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       display: flex;
       flex-direction: column;
-      align-items: center;
       min-height: 100vh;
-      box-sizing: border-box;
     }
+
     header {
       text-align: center;
-      margin-top: 2rem;
+      padding: 2.5rem 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: #0a0a0a;
     }
+
     h1 {
       margin: 0;
-      font-size: 1.8rem;
-      letter-spacing: 0.12em;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
     }
+
+    /* Main Responsive Container: 1 column on mobile, 2 columns on desktop */
+    .main-wrapper {
+      width: 100%;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    @media (min-width: 800px) {
+      .main-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+      }
+    }
+
+    /* Storefront Photo Card */
+    .storefront-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+
+    .storefront-photo {
+      width: 100%;
+      min-height: 460px;
+      border-radius: 8px;
+      background-image: url('/images/StoreFront.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Info + Map Column */
+    .info-column {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .card {
       background: var(--card);
       border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      width: 100%;
-      max-width: 420px;
+      padding: 2rem 1.5rem;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
     }
+
+    .card p {
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0 0 1rem 0;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.85rem 1.75rem;
+      margin-top: 0.75rem;
+      padding: 0.9rem 2rem;
       background: var(--accent);
       color: #000;
       font-weight: 700;
       text-decoration: none;
       border-radius: 8px;
       font-size: 1.1rem;
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
-  </style>
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.15);
+    }
+
+    #map {
+      height: 380px;
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    /* Clean Footer Overrides (Neutralizes CoffeeCup alignment bugs) */
+    footer, .contactInfo, .footer-copyright {
+      width: 100% !important;
+      background: #0a0a0a !important;
+      border-top: 1px solid var(--border);
+      padding: 1.5rem !important;
+      text-align: center !important;
+      position: static !important;
+      color: var(--muted);
+    }
+
+    footer p, .contactInfo p, .footer-copyright p {
+      position: static !important;
+      width: 100% !important;
+      text-align: center !important;
+      margin: 0.4rem auto !important;
+      color: var(--muted) !important;
+    }
+
+    footer a, .contactInfo a {
+      color: var(--accent) !important;
+      text-decoration: none;
+    }
+
+    footer a:hover, .contactInfo a:hover {
+      text-decoration: underline;
+    }
+  </style> -->
 </head>
+
 <body>
+
   <header>
     <h1>Maine Street Barber Shop</h1>
   </header>
-  <main class="card">
-    <p>Classic cuts, straight-razor trims, and mountain hospitality.</p>
-    <p>Site launch in progress.</p>
-    <a href="tel:5555555555" class="btn">Call for Appointment</a>
-  </main>
+
+  <div class="main-wrapper">
+    <!-- Left Column (Desktop) / Top Card (Mobile): Storefront Visual -->
+    <div class="storefront-card">
+      <div class="storefront-photo" role="img" aria-label="Maine Street Barber Shop Storefront"></div>
+    </div>
+
+    <!-- Right Column (Desktop) / Bottom Stack (Mobile): Call to Action & Map -->
+    <div class="info-column">
+      <main class="card">
+        <p>Classic cuts, straight-razor trims, and mountain hospitality.</p>
+        <p style="color: var(--muted); font-size: 0.95rem;">Walk-ins welcome &bull; Florence, Colorado</p>
+        <a href="tel:7192853724" class="btn">Call for Appointment</a>
+      </main>
+
+      <div id="map"></div>
+    </div>
+  </div>
+
+  {% include footer.html %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      loadMapWithLocations();
+    });
+
+    function loadMapWithLocations() {
+      var map = L.map('map').setView([38.389927, -105.116858], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+      }).addTo(map);
+
+      fetch('/data/locations.json')
+        .then(response => response.json())
+        .then(data => {
+          var bounds = [];
+          data.features.forEach(feature => {
+            const lat = feature.geometry.coordinates[0];
+            const lng = feature.geometry.coordinates[1];
+            const locationName = feature.properties.Name;
+
+            var marker = L.marker([lat, lng]).addTo(map)
+              .bindPopup(`<b>${locationName}</b>`, {
+                autoClose: false,
+                closeOnClick: false,
+                closeButton: false
+              })
+              .openPopup();
+
+            marker.off('click');
+            marker.on('click', function() {
+              this.openPopup();
+            });
+
+            bounds.push([lat, lng]);
+          });
+
+          if (bounds.length > 0) {
+            map.fitBounds(bounds, { padding: [40, 40] });
+          }
+        })
+        .catch(error => console.error('Error loading locations:', error));
+    }
+  </script>
 </body>
 </html>

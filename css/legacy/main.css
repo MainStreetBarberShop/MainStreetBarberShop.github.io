@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 10px auto;
+    max-width: 90%;
+    background: linear-gradient(to bottom, #fdfdfd, #f1f1f1); /* Soft gradient */
+    font-family: 'Roboto', 'Helvetica', sans-serif; /* Clean and modern */
+    justify-content: space-around; /* Evenly space items */
+    text-transform: none; /* Optional: Add emphasis */
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    height: 60px; /* Example height */
+    width: 100%; /* Ensures it spans the container */
+}
+
+nav ul {
+    margin: 0 auto; /* Center the list */
+    padding: 0;
+    list-style-type: none;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Removes extra spacing after the last menu item */
+}
+
+nav ul li a {
+    color: #007bff; /* Brighter shade for visibility */
+    padding: 10px;
+    text-transform: none; /* Optional: Add emphasis */
+    text-decoration: none; /* Remove underline for nav links */
+    font-size: 1.2em; /* Slightly larger font size */
+    width: 100%; /* Fixed width to prevent jumping (adjust size as needed) */
+    transition: text-transform 0.3s ease, width 0.3s ease; /* Smooth changes */
+}
+
+nav ul li a:hover {
+    color: hsl(0, 100%, 35%); /* Slightly darker shade on hover */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: underline; /* Remove underline for nav links */
+    text-transform: uppercase; /* Changes the text to uppercase on hover */
+    transition: text-transform 0.5s ease; /* Adds a smooth transition effect */
+}
+
+footer {
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: .8em;
+    font-weight: normal;
+    display: inline;
+    background-color: #f4f4f4; /* Light gray for contrast */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.footer-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #000000, #616468);
+    margin: 20px 0;
+}
+
+.contact li {
+    padding-top: 0px;
+    display: inline-block;
+    margin: 0 10px;
+    list-style: none;
+}
+
+.contact li a {
+    color: #004b97; /* Brighter shade for visibility */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact li a:hover {
+    color: red; /* Matches your hover theme */
+    transition: color 0.3s ease;
+}
+
+.signature {
+    padding-top: 0px;
+    text-align: left; /* Aligns text to the left */
+    margin-left: 20px; /* Adds space from the edge */
+}
+
+.container.hero-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display:    -moz-box;
+    display: -ms-flexbox;
+    display:         flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100vh;
+    background-color: #070707;
+    background-image: url('/images/SphinxPhoenix.jpg');
+    background-attachment: scroll;
+    background-position: center bottom;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+    background-blend-mode: normal;
+  }
+
+  .container.hero-left-cont {
+    display: grid;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    width: 100%;
+  
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+            align-items: center;
+    grid-template-columns: none;
+    grid-template-rows: none;
+  }
+
+  h2.hero-section-text {
+    max-width: 0;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 28px;
+  }
+
+  h1.heading-1-hero-section {
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Archivo', sans-serif;
+  }
+  
+
+  .container.heading-section {
+    margin-right: 2px;
+    margin-left: 0;
+    max-width: 600px;
+  }
+
+.art-piece img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a hover shadow */
+}
+
+
+.companyInfo {
+    font-size: 2.5em; /* Larger headline */
+    font-weight: 700;
+    color: #004b97; /* Professional blue */
+}
+
+@media (max-width: 768px) {
+    .hero img {
+        max-width: 90%; /* Scale down further on mobile */
+    }
+}
+
+
+

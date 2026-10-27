@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="row">
+    <div class="large-9 columns" role="content">
+        <h1>{{ page.title }}</h1>
+        {{ content }} <!-- Ensure this tag is present to inject your markdown content -->
+    </div>
+    
+    <aside class="large-3 columns">
+        <h4>Newsletter Archive</h4>
+        <ul id="newsletters" class="side-nav">
+            {% for newsletter in site.newsletters limit: 10 %}
+            <li><a href="{{ newsletter.url }}">{{ newsletter.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <div class="panel shadow-box">
+            <h5>Technical Note</h5>
+            <p>All documentation rendered via StarsEnd Node-01 using AsciiDoc engineering standards.</p>
+        </div>
+    </aside>
+</div>
+
+
+
+

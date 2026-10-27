@@ -1,0 +1,155 @@
+   :root {
+      --bg: #121212;
+      --card: #1e1e1e;
+      --text: #f0f0f0;
+      --muted: #aaaaaa;
+      --accent: #c49a45;
+      --border: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: #0a0a0a;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* Main Responsive Container: 1 column on mobile, 2 columns on desktop */
+    .main-wrapper {
+      width: 100%;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    @media (min-width: 800px) {
+      .main-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+      }
+    }
+
+    /* Storefront Photo Card */
+    .storefront-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+
+    .storefront-photo {
+      width: 100%;
+      min-height: 460px;
+      border-radius: 8px;
+      background-image: url('/images/StoreFront.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Info + Map Column */
+    .info-column {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+
+    .card p {
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0 0 1rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.15);
+    }
+
+    #map {
+      height: 380px;
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    /* Clean Footer Overrides (Neutralizes CoffeeCup alignment bugs) */
+    footer, .contactInfo, .footer-copyright {
+      width: 100% !important;
+      background: #0a0a0a !important;
+      border-top: 1px solid var(--border);
+      padding: 1.5rem !important;
+      text-align: center !important;
+      position: static !important;
+      color: var(--muted);
+    }
+
+    footer p, .contactInfo p, .footer-copyright p {
+      position: static !important;
+      width: 100% !important;
+      text-align: center !important;
+      margin: 0.4rem auto !important;
+      color: var(--muted) !important;
+    }
+
+    footer a, .contactInfo a {
+      color: var(--accent) !important;
+      text-decoration: none;
+    }
+
+    footer a:hover, .contactInfo a:hover {
+      text-decoration: underline;
+    }
+

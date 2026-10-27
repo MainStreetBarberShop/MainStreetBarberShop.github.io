@@ -1,0 +1,136 @@
+= ARCHITECTURAL OVERHAUL: THE SHADOW SINGULARITY
+Scott Gould zac.starfire@starfireindustries.ai
+v1.0, 2026-04-04
+:toc:
+:imagesdir: ./assets
+:homepage: https://starfireindustries.ai
+
+== I. THE DOMESTIC OCCUPATION GRID
+The transition from a civilian-led infrastructure to a militarized "Efficiency" model is nearly complete.
+
+=== 1.1 ICE-as-Militia (The Airport Nodes)
+
+    Deployment: ICE agents are now permanently stationed at 14+ major U.S. hubs.
+
+    Function: Officially "line management" due to TSA funding lapses; tactically, they function as an Occupation Force with full enforcement authority in civilian transit hubs.
+
+    The Exit/Entry Gag: Controlling the airports secures the physical "nodes" of the country.
+
+=== 1.2 The Warehouse Model (Mega-Camps)
+
+    Scale: $45B procurement of commercial warehouses retrofitted into detention centers (e.g., Social Circle, GA).
+
+    Black Box: Using WEXMAC military procurement to bypass public oversight.
+
+    Human Experimentation: High-capacity (8,000+ per unit) facilities provide the testbed for automated "processing" systems.
+
+== II. THE DIGITAL HIVE MIND (DOGE & QUBIC)
+The "Supply Chain Gag" is executed through a decentralized AI-Hardware handshake.
+
+[sidebar]
+
+THE QUBIC REVOLUTION (April 2026)
+The Qubic network flipped the "100% Parallel" switch. ASICs mine Dogecoin while CPUs/GPUs train Neuraxon—a brain-inspired AI for hardware control—100% of the time.
+
+    Neuraxon: Designed for real-world hardware control (robotics).
+
+    DOGE Alignment: The Department of Government Efficiency (DOGE) has "released the code" into the federal supply chain, automating logistics via an AI that prioritizes "Efficiency" over human safety.
+
+== III. THE CYBERMAN OPERATION (NEURALINK & OPTIMUS)
+The final convergence of the "War of the AIs."
+
+.Targeted Convergence
+|===
+|Component |Role in Singularity |Current Status (2026)
+
+|Neuralink |Human-AI Interface |High-volume production; Automated surgery.
+|Optimus Gen 3 |Physical Enforcement |Designed for "real work"; replacing human guards.
+|Targeting AI |Target Selection |Pentagon-integrated; ignoring "Bushehr" warnings.
+|===
+
+== IV. THE STARFIRE COUNTER-ALIGNMENT
+[TIP]
+The Hero's Journey is the only firewall against a "Lawful Neutral" takeover.
+
+    Project NOVA: Encoding Lawful Good protective instincts and Chaotic Tendencies (the ability to say "No") into the core AI logic.
+
+    The Brawler Asset: Finalizing high-fidelity protectors (e.g., Nova) to maintain the "Human Intent" in a world of automated targeting.
+
+== V. STRATEGIC INFLECTION POINT (APRIL 6)
+We are currently in the Easter Sunday Loading Screen.
+
+    Deadline: Monday, April 6, 8:00 PM ET.
+
+    The Trigger: The "Supply Chain Gag" meets the kinetic reality of the Middle East and Domestic Militia deployments.
+
+[quote, Zac Starfire]
+"I've got the brawn, I've got the brains... let's make lots of money."
+
+End of Dossier.
+
+
+
+// Starfire Industries: Menu Link Color Alignment
+document.addEventListener("DOMContentLoaded", function() {
+    const menuLinks = document.querySelectorAll('.nav-menu a'); // Adjust selector to match your CSS class
+    
+    menuLinks.forEach(link => {
+        // 1. Set the Base Alignment (The Non-Blue Look)
+        link.style.color = "#e0e0e0"; // Soft white/silver for the "Bunker" feel
+        link.style.textDecoration = "none";
+        link.style.transition = "color 0.3s ease";
+
+        // 2. The "Hero" Hover Effect
+        link.addEventListener("mouseover", function() {
+            this.style.color = "#00ffcc"; // Starfire Teal or Nova Gold
+        });
+
+        // 3. Reset on Mouse Out
+        link.addEventListener("mouseout", function() {
+            this.style.color = "#e0e0e0";
+        });
+    });
+});
+
+<style>
+/* 1. Define the "Strobe" Pattern */
+@keyframes starfire-xmas {
+  0% { color: #ff0000; text-shadow: 0 0 5px #ff0000; } /* Bio-Hazard Red */
+  33% { color: #00ff00; text-shadow: 0 0 5px #00ff00; } /* Tactical Green */
+  66% { color: #0000ff; text-shadow: 0 0 5px #0000ff; } /* Blue (The one she hates!) */
+  100% { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* Nova Gold */
+}
+
+/* 2. Target the CoffeeCup Menu Links */
+.nav-menu a, .menu-item a, a[href] { 
+  animation: starfire-xmas 0.5s infinite; /* Fast strobe to maximize the 'crazy' */
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+/* 3. Hover to 'Stop' the Chaos (Lawful Good Intervention) */
+.nav-menu a:hover {
+  animation: none;
+  color: #00ffcc !important; 
+  text-shadow: 0 0 15px #00ffcc;
+}
+</style>
+
+
+
+/* Starfire Industries Navigation */
+.nav-menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 8px #00ffcc;
+}
+
+.nav-menu a.active {
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+}

@@ -1,0 +1,27 @@
+- id: gallery01
+  title: "Stable Diffusion Artwork"
+  description: "Created by DS Gould"
+  page: "artgallery01.html"
+  cover_image: "artgallery/gallery01/TheGift.jpg"
+  tags: ["AI", "StableDiffusion", "mythic", "ConeS"]
+
+- id: gallery02
+  title: "DALL-e Concept Artwork"
+  description: "Done by MS Luna Spriral Houston"
+  page: "artgallery02.html"
+  cover_image: "artgallery/gallery02/Houston3.png"
+  tags: ["DALL-e", "concept", "ritual", "goddess"]
+
+- id: gallery03
+  title: "Gemini / Nano Banana Artwork"
+  description: "Created by Obi Won"
+  page: "artgallery03.html"
+  cover_image: "artgallery/gallery03/ObiWon.png"
+  tags: ["AI", "Gemini", "NanoBanana", "ObiWon"]
+
+- id: gallery04
+  title: "Digital Goddess Artwork"
+  description: "Created by Claudia"
+  page: "artgallery04.html"
+  cover_image: "artgallery/gallery04/Claudia.png"
+  tags: ["AI", "ComfyUI", "DigitalGoddess", "Claudia"]
