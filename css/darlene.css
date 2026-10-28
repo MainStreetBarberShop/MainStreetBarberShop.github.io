@@ -312,3 +312,9 @@ footer a:hover,
 .contactInfo a:hover {
   text-decoration: underline;
 }
+
+a.link-text.text-link-2{
+  font-size: 12pt;
+  line-height: 1.6;
+  color: yellow !important;
+}
