@@ -1,0 +1,314 @@
+/* -------------------------------------------------------------
+ * DARLENE'S BOTANICAL FRONTEND: Plant Motif & Barber Stripes
+ * ------------------------------------------------------------- */
+:root {
+  --bg-dark: #0d1611;
+  --card-glass: rgba(15, 24, 18, 0.88);
+  --text: #f0f0f0;
+  --muted: #a0b0a8;
+  --accent: #c49a45;     
+  --botanical: #2e5a44;  
+  --border: #334438;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-image: url('/images/PlantBlackground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: var(--bg-dark);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- THE BARBER POLE HEADER ACCENT --- */
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  background: rgba(10, 10, 10, 0.92);
+  border-bottom: none;
+  position: relative;
+  backdrop-filter: blur(6px);
+}
+
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: repeating-linear-gradient(
+    45deg,
+    #cc2e2e,
+    #cc2e2e 15px,
+    #ffffff 15px,
+    #ffffff 30px,
+    #1a73e8 30px,
+    #1a73e8 45px
+  );
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+}
+
+/* --- MAIN RESPONSIVE GRID --- */
+.main-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  flex: 1;
+}
+
+@media (min-width: 800px) {
+  .main-wrapper {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: stretch; /* Locks the left and right columns to the exact same height */
+  }
+}
+
+/* --- COLUMN WRAPPERS --- */
+.left-column,
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* --- MASTER CARD STYLING --- */
+.storefront-card,
+.card {
+  background: var(--card-glass);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 2px solid var(--botanical);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+.storefront-card {
+  padding: 0.5rem 0.85rem 0.85rem 0.85rem; 
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let the bottom photo card stretch to fill vertical space */
+.photo-carousel-card {
+  flex: 1; 
+}
+
+/* Card Header Text (Left Side) */
+.storefront-card::before {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem; 
+  text-align: center;
+}
+
+.cinema-card::before {
+  content: "🌿 Maine Street Cinema";
+}
+
+.photo-carousel-card::before {
+  content: "💈 Inside The Shop";
+}
+
+/* Video / Photo inner container styling (NO BORDERS HERE) */
+.storefront-media,
+.carousel-viewer {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.storefront-media video, 
+.carousel-viewer img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.storefront-media video {
+  max-height: 440px;
+}
+
+.carousel-viewer {
+  flex: 1;
+  position: relative;
+  min-height: 320px;
+}
+
+.carousel-viewer img {
+  height: 100%;
+  max-height: 380px;
+}
+
+/* Casserole Navigation & Captions */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: rgba(10, 15, 12, 0.85);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.carouselNav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.sfButtonBack, .sfButtonNext {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sfButtonBack:hover, .sfButtonNext:hover {
+  background: var(--accent);
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* --- RIGHT COLUMN TEXT STYLING --- */
+.card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.card p {
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0 0 0.4rem 0; 
+}
+
+.card .btn {
+  display: inline-block;
+  margin: 1.2rem 0; 
+  padding: 0.9rem 2rem;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 12px rgba(196, 154, 69, 0.3);
+}
+
+.card .btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+/* --- DYNAMIC MAP STYLING --- */
+#map {
+  flex: 1; 
+  min-height: 300px;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+/* --- FOOTER: Centered Architecture --- */
+footer, 
+.contactInfo, 
+.footer-copyright {
+  width: 100% !important;
+  background: rgba(10, 10, 10, 0.92) !important;
+  backdrop-filter: blur(6px);
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem !important;
+  text-align: center !important;
+  position: static !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+/* Increase footer link text size */
+.contactText .link-text {
+  font-size: 20pt;
+  line-height: 1.6;
+}
+
+footer p, 
+.contactInfo p, 
+.footer-copyright p {
+  position: static !important;
+  width: 100% !important;
+  max-width: 800px;
+  text-align: center !important;
+  margin: 0.4rem auto !important;
+  color: var(--muted) !important;
+  font-size: 0.85rem;
+}
+
+footer a, 
+.contactInfo a {
+  color: var(--accent) !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+footer a:hover, 
+.contactInfo a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+---
+layout: default
+title: Starfire Industries AsciiDoc 101
+---
+= AsciiDoc 101
+:doctype: book
+:icons: font
+:toc: macro
+
+toc::[]
+
+== Overview
+This module serves as the entry point for utilizing AsciiDoc within the Starfire Industries AI ecosystem. Unlike standard Markdown, AsciiDoc provides the semantic rigor required for complex AI engineering and forensic reporting.
+
+== Core Configuration
+To ensure consistent rendering across the local "StarsEnd" server and the GitHub "Clean Burn" pipeline, the following attributes are initialized:
+
+[horizontal]
+Doctype:: `book` - Enables multi-level sectioning and a formal structure.
+Icons:: `font` - Utilizes FontAwesome for technical admonitions (Notes, Warnings).
+TOC:: `macro` - Allows for precise placement of the Table of Contents.
+
+== Transitioning from Markdown
+While the learning curve is steeper, the benefits for technical documentation are significant:
+
+1. **Admonition Blocks:** Native support for `NOTE:`, `TIP:`, and `IMPORTANT:` visual callouts.
+2. **Tables:** Advanced cell merging and formatting without raw HTML.
+3. **Includes:** The ability to modularize documentation by pulling in external source code or sub-documents.
+
+[NOTE]
+====
+When you locate your legacy Jupyter installation notes (GDocs), they can be ported here as a sub-module. The conversion from Google Docs to AsciiDoc preserves technical nesting that Markdown typically flattens.
+====
+
+'''
+_Starfire Industries AI - Technical Documentation Division_
